@@ -33,6 +33,8 @@ fn main() {
     let n = 40;
     let result = fib_but_faster(n);
     println!("fib_but_faster({n}) is {result}");
+
+    christmas_caro();
 }
 
 fn another_function(x: i32) {
@@ -185,4 +187,47 @@ fn fib_but_faster(n: u64) -> u64 {
         b = c;
     }
     b
+}
+
+fn christmas_caro() {
+    let days = [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth",
+    ];
+    let gifts = [
+        "a partridge in a pear tree",
+        "two turtle doves",
+        "three french hens",
+        "four calling birds",
+        "five golden rings",
+        "six geese a laying",
+        "seven swans a swimming",
+        "eight maids a milking",
+        "nine ladies dancing",
+        "ten lords a leaping",
+        "eleven pipers getting lit",
+        "twelve drummers drumming",
+    ];
+
+    for day in 0..12 {
+        println!("On the {} day of Christmas my true love sent to me", days[day]);
+        for gift in (0..day+1).rev() {
+            if gift == 0 && day != 0 {
+                println!("and {}", gifts[gift]);
+            } else {
+                println!("{}", gifts[gift]);
+            }
+        }
+        println!();
+    }
 }
